@@ -1,15 +1,18 @@
 module.exports = function(app, db) {
+	 
+    // You'll search your offers here
 	 app.post('/offers', (req, res) => {
-		 
-		    // You'll search your offers here
-		 
-		 // if amount request send
-		  if (req.body.amount) {
-			  
-			
-              // filter by amount
-			  
-			  let arrayFound = db.asks.filter(function (el) {
+
+			 // Read file in asynchronously (non-blocking)
+		      const fs = require('fs');
+			  fs.readFile(db, 'utf8', function(err, contents) {
+				  
+			// convert to json type
+			 const data = JSON.parse(contents);
+			  // if amount request send
+			  if (req.body.amount) {
+				// filter by amount
+			  let arrayFound = data.asks.filter(function (el) {
 				  return el[0] <= req.body.amount
 				});
 		
@@ -34,9 +37,8 @@ module.exports = function(app, db) {
 			  }
 		      // show json daata without filter if there is no amount request
 		      } else {
-		        res.send({'ask':db.asks});
+		        res.send({'ask':data.asks});
 		      }
-			 
-		   res.end('end');
+			  });
 		  });
 };
