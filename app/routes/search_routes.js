@@ -9,7 +9,7 @@ module.exports = function(app, db) {
 			
               // filter by amount
 			  
-			  var arrayFound = db.asks.filter(function (el) {
+			  let arrayFound = db.asks.filter(function (el) {
 				  return el[0] <= req.body.amount
 				});
 		
