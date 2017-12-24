@@ -6,8 +6,8 @@ After running those commands, you will see a node_modules folder containing all 
 finally run the nodejs server from terminal npm run dev (from the project root directory).
 </p>
 
-<p>you can then check the api from postman or whatever the rest client that you use.
-Example URl (method post) http://localhost:8000/offers/ 
+<p> <b>(Method post)</b> you can then check the api from postman or whatever the rest client that you use.
+Example URl <b>(method post)</b> http://localhost:8000/offers/ 
 
 Postman : Request Parameters
 In Postman, go to the Body tab and add some key-value pairs, after selecting the x-www-form-urlencoded radio button. 
