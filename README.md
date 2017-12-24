@@ -1,3 +1,9 @@
+<h2> instruction to install and run the  api</h2>
+<p>I assume you already installed nodejs and npm so first clone the repo git@github.com:mohamedrasvi/challenge-1.git.
+and then install all dependencies (cd challenge-1 and run the npm install).
+After running those commands, you will see a node_modules folder containing all of the project dependencies specified in the package.json. 
+</p>
+
 <p align="center">
   <a href="https://www.netlolo.com">
       <img src="https://app.netlolo.com/images/logo_vertical.png" alt="Netlolo"/>
