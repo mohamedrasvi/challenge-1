@@ -21,7 +21,7 @@ return JSON.parse(file);
 
 function getConfig(file){
 
-var filepath = './config/' + file;
+let filepath = './config/' + file;
 return readJsonFileSync(filepath);
 }
 const db             = getConfig('orderbook.json');
