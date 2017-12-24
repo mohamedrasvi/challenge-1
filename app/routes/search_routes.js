@@ -6,22 +6,13 @@ module.exports = function(app, db) {
 		 // if amount request send
 		  if (req.body.amount) {
 			  
-			  // declare obj variable from json file
-			  let obj = db.asks;
-              
-			  // check the price base on amount send
-			  function checPrice(obj) {
-			      return obj[0] <= req.body.amount;
-			  }
-
-			  // create the myFilter function and use filter method from
-				// checkPrice method out put
-			  function myFilter() {
-				 return db.asks.filter(checPrice);
-			  }
+			
+              // filter by amount
 			  
-			  // declare filter object to a variable
-			  let arrayFound = myFilter();
+			  var arrayFound = db.asks.filter(function (el) {
+				  return el[0] <= req.body.amount
+				});
+		
 			  
 			  // if oderby request send
 			  if(req.body.orderby){
@@ -29,21 +20,21 @@ module.exports = function(app, db) {
 			  if(req.body.orderby == 'desc'){
 				  
 			  let descending = arrayFound.sort((a, b) => b[0] - a[0]);
-			  res.json({'asks':descending});
+			  res.send({'asks':descending});
 			  
 		       } else{
 		    	   
 		      let ascending = arrayFound.sort((a, b) => a[0] - b[0]);
-			  res.json({'asks':ascending}); 
+			  res.send({'asks':ascending}); 
 			  
 		       }
 			  // else just send out put base on price filter
 			  } else {
-				  res.json({'asks': arrayFound});  
+				  res.send({'asks': arrayFound});  
 			  }
 		      // show json daata without filter if there is no amount request
 		      } else {
-		        res.json(db.asks);
+		        res.send({'ask':db.asks});
 		      }
 			 
 		   res.end('end');
