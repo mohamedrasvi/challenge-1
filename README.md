@@ -1,20 +1,20 @@
 <h2> instruction to install and run the  api</h2>
 <p>I assume you already installed nodejs and npm so first clone the repo git@github.com:mohamedrasvi/challenge-1.git.
-and then install all dependencies (cd challenge-1 and run the npm install).
+and then install all the dependencies (cd challenge-1 and run the npm install).
 After running those commands, you will see a node_modules folder containing all of the project dependencies specified in the package.json. 
 
-finally run the nodejs server from terminal your project root folder (npm run dev).
+finally run the nodejs server from terminal npm run dev (from the project root directory).
 </p>
 
 <p>you can then check the api from postman or whatever the rest client that you use.
 Example URl (method post) http://localhost:8000/offers/ 
-Postman : Request Parameters
 
+Postman : Request Parameters
 In Postman, go to the Body tab and add some key-value pairs, after selecting the x-www-form-urlencoded radio button. 
 key must be (amount and orderby)
 example
 amount:47000
-orderby:asc
+orderby:asc .
 This will add encoded form data to your request, which you’ll be able to process with your API.
 </p>
 
